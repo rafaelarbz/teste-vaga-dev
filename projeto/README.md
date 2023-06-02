@@ -1,6 +1,8 @@
 # Teste para candidatos à vaga de Programador - Magis5
 
-O projeto consiste em uma API para cadastro de clientes, desenvolvida utilizando FlightPHP no back-end e ReactJS no front-end.
+O projeto consiste em uma API para cadastro de clientes, desenvolvida utilizando FlightPHP no back-end e ReactJS no front-end
+
+Resultado:
 
 ![Resultado](https://drive.google.com/uc?export=view&id=1vjPXZcsHroe5_t9prQCIxrNag-FhYKKo)
 
