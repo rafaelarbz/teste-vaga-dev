@@ -22,6 +22,11 @@ function Formulario() {
         setCidade("");
     }
 
+    const permitirApenasNumeros = (value) => {
+        return value
+          .replace(/\D+/g, '')
+    }
+
     const cnpjMask = (value) => {
         return value
           .replace(/\D+/g, '')
@@ -74,7 +79,7 @@ function Formulario() {
                     </div>
                     <div className="col-8">
                         <label htmlFor="nome">Nome:</label>
-                        <input value={nome} onChange={e => setNome(e.target.value)} type="text" className="form-control" name="nome" id="nome" required/>
+                        <input value={nome.toUpperCase()} onChange={e => setNome(e.target.value)} type="text" className="form-control" name="nome" id="nome" required/>
                     </div>
                 </div>
                 <div className="row px-3 mb-3">
@@ -84,17 +89,17 @@ function Formulario() {
                     </div>
                     <div className="col-7">
                         <label htmlFor="endereco">Endereço</label>
-                        <input value={endereco} onChange={e => setEndereco(e.target.value)} type="text" className="form-control" name="endereco" id="endereco"/>
+                        <input value={endereco.toUpperCase()} onChange={e => setEndereco(e.target.value)} type="text" className="form-control" name="endereco" id="endereco"/>
                     </div>
                     <div className="col-2">
                         <label htmlFor="numero">Número:</label>
-                        <input value={numero} onChange={e => setNumero(e.target.value)} type="text" maxLength={10} className="form-control" name="numero" id="numero"/>
+                        <input value={permitirApenasNumeros(numero)} onChange={e => setNumero(e.target.value)} type="text" maxLength={10} className="form-control" name="numero" id="numero"/>
                     </div>
                 </div>
                 <div className="row px-3 mb-3">
                     <div className="col-6">
                         <label htmlFor="bairro">Bairro</label>
-                        <input value={bairro} onChange={e => setBairro(e.target.value)} type="text" className="form-control" name="bairro" id="bairro"/>
+                        <input value={bairro.toUpperCase()} onChange={e => setBairro(e.target.value)} type="text" className="form-control" name="bairro" id="bairro"/>
                     </div>
                     <div className="col-3">
                         <label htmlFor="uf">UF:</label>
