@@ -38,4 +38,4 @@ Para o front-end conectar-se com a API:
 
 - Faça uma cópia do projeto ou apenas do diretório 📂frontend __fora__ de seu servidor web
 - Em 📂frontend>📂src>📂services>📄Api.js edite o __baseURL__ de acordo com a url do diretório 📂api em seu servidor web
-- Por fim, em 📂frontend acesse o terminal e execute __npm start__ para que o projeto rode em seu navegador
+- Por fim, em 📂frontend acesse o terminal e execute __npm start__ para que o front-end rode em seu navegador
