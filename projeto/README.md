@@ -4,7 +4,7 @@ O projeto consiste em uma API para cadastro de clientes, desenvolvida utilizando
 
 Resultado:
 
-![Resultado](https://drive.google.com/uc?export=view&id=1vjPXZcsHroe5_t9prQCIxrNag-FhYKKo/view?usp=sharing)
+![Resultado](https://drive.google.com/uc?export=view&id=1vjPXZcsHroe5_t9prQCIxrNag-FhYKKo)
 
 ## Tecnologias
 
