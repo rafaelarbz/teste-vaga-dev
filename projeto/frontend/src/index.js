@@ -1,5 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Lista from './Lista';
+import Formulario from './Formulario'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function Index() {
+
+  return (
+      <div className='container justify-content-center col-6 mt-5'>
+        <div>
+          <Formulario />
+        </div>
+        <div className='mt-5'>
+          <Lista />
+        </div>
+      </div>
+  );
+}
+
+ReactDOM.render(<Index />, document.getElementById('root'));
