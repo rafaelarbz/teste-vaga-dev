@@ -6,7 +6,7 @@ CREATE TABLE cliente (
     nome VARCHAR(255) NOT NULL,
     cep VARCHAR(10),
     endereco VARCHAR(255),
-    numero NUMERIC,
+    numero VARCHAR(10),
     bairro VARCHAR(255),
     uf VARCHAR(2),
     cidade VARCHAR(255)
