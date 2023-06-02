@@ -12,7 +12,14 @@ function Formulario() {
     const [cidade, setCidade] = useState("");
 
     const cancelar = () => {
-        document.getElementById('formulario').reset();
+        setCnpj("");
+        setNome("");
+        setCep("");
+        setEndereco("");
+        setNumero("");
+        setBairro("");
+        setUf("");
+        setCidade("");
     }
 
     const cliente = {
