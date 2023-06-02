@@ -13,14 +13,14 @@ class Cliente {
 
     public function cadastrar($request) {
 
-        $cnpj = $request->data->cnpj ? $request->data->cnpj : null;
-        $nome = $request->data->nome ? $request->data->nome : null;
-        $cep = $request->data->cep;
-        $endereco = $request->data->endereco;
-        $numero = $request->data->numero;
-        $bairro = $request->data->bairro;
-        $uf = $request->data->uf;
-        $cidade = $request->data->cidade;
+        $cnpj = !empty($request->data->cnpj) ? $request->data->cnpj : null;
+        $nome = !empty($request->data->nome) ? $request->data->nome : null;
+        $cep = !empty($request->data->cep) ? $request->data->cep : null;
+        $endereco = !empty($request->data->endereco) ? $request->data->endereco : null;
+        $numero = !empty($request->data->numero) ? $request->data->numero : null;
+        $bairro = !empty($request->data->bairro) ? $request->data->bairro : null;
+        $uf = !empty($request->data->uf) ? $request->data->uf : null;
+        $cidade = !empty($request->data->cidade) ? $request->data->cidade : null;
 
         $query = $this->db->prepare("
             INSERT INTO cliente (cnpj, nome, cep, endereco, numero, bairro, uf, cidade)
