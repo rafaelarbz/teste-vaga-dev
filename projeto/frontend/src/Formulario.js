@@ -22,6 +22,22 @@ function Formulario() {
         setCidade("");
     }
 
+    const cnpjMask = (value) => {
+        return value
+          .replace(/\D+/g, '')
+          .replace(/(\d{2})(\d)/, '$1.$2')
+          .replace(/(\d{3})(\d)/, '$1.$2')
+          .replace(/(\d{3})(\d)/, '$1/$2')
+          .replace(/(\d{4})(\d)/, '$1-$2')
+          .replace(/(-\d{2})\d+?$/, '$1')
+    }
+
+    const cepMask = (value) => {
+        return value
+          .replace(/\D+/g, '')
+          .replace(/(\d{5})(\d)/, '$1-$2') 
+    }
+
     const cliente = {
         cnpj: cnpj,
         nome: nome,
@@ -54,7 +70,7 @@ function Formulario() {
                 <div className="row px-3 mb-3 mt-4">
                     <div className="col-4">
                         <label htmlFor="cnpj">CNPJ:</label>
-                        <input value={cnpj} onChange={e => setCnpj(e.target.value)} type="text" maxLength={18} className="form-control" name="cnpj" id="cnpj" required/>
+                        <input value={cnpjMask(cnpj)} onChange={e => setCnpj(e.target.value)} type="text" maxLength={18} className="form-control" name="cnpj" id="cnpj" required/>
                     </div>
                     <div className="col-8">
                         <label htmlFor="nome">Nome:</label>
@@ -64,7 +80,7 @@ function Formulario() {
                 <div className="row px-3 mb-3">
                     <div className="col-3">
                         <label htmlFor="cep">CEP:</label>
-                        <input value={cep} onChange={e => setCep(e.target.value)} type="text" maxLength={9} className="form-control" name="cep" id="cep"/>
+                        <input value={cepMask(cep)} onChange={e => setCep(e.target.value)} type="text" maxLength={9} className="form-control" name="cep" id="cep"/>
                     </div>
                     <div className="col-7">
                         <label htmlFor="endereco">Endereço</label>
