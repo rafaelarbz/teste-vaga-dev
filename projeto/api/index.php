@@ -20,7 +20,7 @@ Flight::route('POST /cliente', function () {
     $controller->cadastrarCliente(Flight::request());
 });
 
-Flight::route('PUT /cliente/@id', function ($id) {
+Flight::route('POST /cliente/@id', function ($id) {
     $controller = new ClienteController();
     $controller->editarCliente($id, Flight::request());
 });
