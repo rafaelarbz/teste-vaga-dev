@@ -34,8 +34,31 @@ class Cliente {
         return false;
     }
 
-    public function editar(int $id, $request) {
+    public function buscar(int $id) {
         return $this->db->query("SELECT * FROM cliente WHERE id = $id")->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function editar(int $id, $request) {
+        $cnpj = !empty($request->data->cnpj) ? $request->data->cnpj : null;
+        $nome = !empty($request->data->nome) ? $request->data->nome : null;
+        $cep = !empty($request->data->cep) ? $request->data->cep : null;
+        $endereco = !empty($request->data->endereco) ? $request->data->endereco : null;
+        $numero = !empty($request->data->numero) ? $request->data->numero : null;
+        $bairro = !empty($request->data->bairro) ? $request->data->bairro : null;
+        $uf = !empty($request->data->uf) ? $request->data->uf : null;
+        $cidade = !empty($request->data->cidade) ? $request->data->cidade : null;
+
+        $query = $this->db->prepare("
+            UPDATE cliente
+            SET cnpj = '$cnpj', nome = '$nome', cep = '$cep', endereco = '$endereco', numero = '$numero', bairro = '$bairro', uf = '$uf', cidade = '$cidade'
+            WHERE id = $id
+        ");
+
+        if ($query->execute()) {
+            return true;
+        }
+
+        return false;
     }
 }
 ?>
