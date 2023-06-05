@@ -10,7 +10,7 @@ Flight::route('GET /clientes', function () {
     $controller->buscarClientes();
 });
 
-Flight::route('POST /cadastrar', function () {
+Flight::route('POST /cliente', function () {
     $controller = new ClienteController();
     $controller->cadastrarCliente(Flight::request());
 });

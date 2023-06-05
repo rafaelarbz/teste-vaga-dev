@@ -56,7 +56,7 @@ function Formulario() {
 
     const salvar = () => {
 
-        api.post('/cadastrar', cliente, {
+        api.post('/cliente', cliente, {
             headers: {"Content-Type": "application/x-www-form-urlencoded"}
         })
         .then((response) => console.log(response))
