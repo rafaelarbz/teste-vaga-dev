@@ -25,5 +25,10 @@ Flight::route('POST /cliente/@id', function ($id) {
     $controller->editarCliente($id, Flight::request());
 });
 
+Flight::route('DELETE /cliente/@id', function ($id) {
+    $controller = new ClienteController();
+    $controller->excluirCliente($id);
+});
+
 Flight::start();
 ?>

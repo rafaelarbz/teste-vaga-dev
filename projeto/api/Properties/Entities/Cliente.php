@@ -60,5 +60,15 @@ class Cliente {
 
         return false;
     }
+
+    public function excluir(int $id) {
+        $query = $this->db->prepare("DELETE FROM cliente WHERE id = $id");
+
+        if ($query->execute()) {
+            return true;
+        }
+
+        return false;
+    }
 }
 ?>

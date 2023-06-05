@@ -45,5 +45,20 @@ class ClienteController {
             "message" => "Cliente editado com sucesso!"
         ]);
     }
+
+    public function excluirCliente($id) {
+        $dados = $this->entity->excluir($id);
+
+        if (!$dados) {
+            return Flight::json([
+                "status" => "error", 
+                "message" => "Falha ao excluir cliente!"
+            ]);
+        }
+        return Flight::json([
+            "status" => "success",
+            "message" => "Cliente excluído com sucesso!"
+        ]);
+    }
 }
 ?>
