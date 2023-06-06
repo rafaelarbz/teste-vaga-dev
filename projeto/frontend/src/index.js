@@ -1,19 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import ReactDOM from 'react-dom';
-import Lista from './Lista';
-import Formulario from './Formulario'
+import FormularioEditar from './FormularioEditar';
+import Principal from './Principal';
 
 function Index() {
 
   return (
+    <BrowserRouter>      
       <div className='container justify-content-center col-6 mt-5'>
-        <div>
-          <Formulario />
-        </div>
-        <div className='mt-5'>
-          <Lista />
-        </div>
+          <Routes>
+            <Route exact path='/' element={<Principal />}/>
+            <Route path=':id/editar' element={<FormularioEditar />} />
+          </Routes>
       </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import api from "./services/Api"
 
 function Lista() {
@@ -34,7 +35,7 @@ function Lista() {
               <tr key={cliente.id}>
                 <td>{cliente.cnpj}</td>
                 <td>{cliente.nome}</td>
-                <td><a href='#'>Edit</a></td>
+                <td><Link to={`${cliente.id}/editar`}>Edit</Link></td>
               </tr>
             );
           })}
