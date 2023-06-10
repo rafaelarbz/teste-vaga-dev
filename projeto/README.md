@@ -26,6 +26,7 @@ O projeto é constituido por dois diretórios:
 Para rodar o projeto é necessário:
 
 - Servidor web (ex.:xampp)
+- Node.js
 - BD MySQL
 
 Para configurar o back-end em seu ambiente:
